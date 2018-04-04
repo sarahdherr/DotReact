@@ -2,35 +2,35 @@ import { nameMapping, getInitials } from "../../ui/helpers/contactHelpers";
 import { Contact, ContactData } from "../../ui/components/contact/contact";
 import { expect } from "chai";
 
-describe("Contact helper functions", function() {
-    describe("getInitials()", function() {
-        it("should return empty string if given two empty strings", function() {
+describe("Contact helper functions", () => {
+    describe("getInitials()", () => {
+        it("should return empty string if given two empty strings", () => {
             var actual = getInitials("", "");
             var expected = "";
             expect(actual).to.equal(expected);
         });
 
-        it("should return the first letters of given names", function() {
+        it("should return the first letters of given names", () => {
             var actual = getInitials("Chandler", "Bing");
             var expected = "CB";
             expect(actual).to.equal(expected);
         });
 
-        it("should always return capital letters", function() {
+        it("should always return capital letters", () => {
             var actual = getInitials("monica", "geller");
             var expected = "MG";
             expect(actual).to.equal(expected);
         });
 
-        it("should return one letter if only one name given", function() {
+        it("should return one letter if only one name given", () => {
             var actual = getInitials("Ross", "");
             var expected = "R";
             expect(actual).to.equal(expected);
         });
     });
 
-    describe("nameMapping()", function() {
-        it("should add empty strings if no name given", function() {
+    describe("nameMapping()", () => {
+        it("should add empty strings if no name given", () => {
             const contactArr : Array<ContactData> = [
                 {id: 1, score: 55, name: ""},
                 {id: 2, score: 65, name: ""},
@@ -45,7 +45,7 @@ describe("Contact helper functions", function() {
             expect(actual).to.deep.equal(expected);
         });
 
-        it("should split the names at first and last", function() {
+        it("should split the names at first and last", () => {
             const contactArr : Array<ContactData> = [
                 {id: 1, score: 55, name: "Rachel Green"},
                 {id: 2, score: 65, name: "Joey Tribiani"},
@@ -60,7 +60,7 @@ describe("Contact helper functions", function() {
             expect(actual).to.deep.equal(expected);
         });
 
-        it("should grab only first and last names", function() {
+        it("should grab only first and last names", () => {
             const contactArr : Array<ContactData> = [
                 {id: 1, score: 55, name: "Little Miss Muffit"},
                 {id: 2, score: 65, name: "My Pet Dragon"},

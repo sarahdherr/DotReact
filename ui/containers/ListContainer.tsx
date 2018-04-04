@@ -9,7 +9,6 @@ interface ListContainerProps { showCompany : boolean }
 export const ListContainer = (props : ListContainerProps) => {
     const CompanyListContainer : React.ComponentClass = ListHOC("Companies", CompanyList, "api/companies", (el : any) => el);
     const ContactListContainer : React.ComponentClass = ListHOC("Contacts", ContactList, "api/contacts", nameMapping);
-    console.log("SHOW COMPANY", props.showCompany);
     return (
         <div>
             {

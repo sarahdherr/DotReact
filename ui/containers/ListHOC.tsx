@@ -17,6 +17,7 @@ export default function ListHOC(header : string, Component : any, apiCall : stri
                 items : []
             };
             this.handleSearch = this.handleSearch.bind(this);
+            this.handleExit = this.handleExit.bind(this);
         }
 
         componentDidMount() : void {
@@ -28,15 +29,20 @@ export default function ListHOC(header : string, Component : any, apiCall : stri
                 .catch((err : Error) => console.error(err));
         }
 
-        handleSearch(val : string) : void {
-            this.setState({ searchTerm : val });
+        handleSearch(evt : any) : void {
+            evt.preventDefault();
+            this.setState({ searchTerm : evt.target.value });
+        }
+
+        handleExit() : void {
+            this.setState({ searchTerm: "" });
         }
 
         render() : any {
             return (
                 <div className="list-container">
                      <Header name={header} />
-                     <Search handleSearch={this.handleSearch} />
+                     <Search handleSearch={this.handleSearch} handleExit={this.handleExit} searchTerm={this.state.searchTerm} />
                      <div className="contactslist">
                          <Infinite containerHeight={674} elementHeight={50}>
                              <Component items={this.state.items} searchTerm={this.state.searchTerm} />
