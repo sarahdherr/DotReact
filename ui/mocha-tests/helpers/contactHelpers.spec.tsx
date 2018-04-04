@@ -1,5 +1,5 @@
-import { nameMapping, getInitials } from "../../ui/helpers/contactHelpers";
-import { Contact, ContactData } from "../../ui/components/contact/contact";
+import { nameMapping, getInitials } from "../../helpers/contactHelpers";
+import { Contact, ContactData } from "../../components/contact/contact";
 import { expect } from "chai";
 
 describe("Contact helper functions", () => {

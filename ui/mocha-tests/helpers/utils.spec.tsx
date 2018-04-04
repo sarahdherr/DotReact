@@ -1,4 +1,4 @@
-import { includes } from "../../ui/helpers/utils";
+import { includes } from "../../helpers/utils";
 import { expect } from "chai";
 
 describe("Utility helper functions", () => {
