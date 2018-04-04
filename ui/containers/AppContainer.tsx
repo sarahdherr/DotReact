@@ -1,30 +1,33 @@
 import * as React from "react";
 import { NavButtons } from "../components/NavButtons";
 import { ListContainer } from "./ListContainer";
+import { ListType } from "./enums/listTypes";
 
 interface AppProps {}
-interface AppState { showCompany : boolean }
+interface AppState { listType : ListType }
 
-export class AppContainer extends React.Component<AppProps, AppState> {
+class AppContainer extends React.Component<AppProps, AppState> {
     constructor(props : AppProps) {
         super(props);
         this.state = {
-            showCompany: true
+            listType: ListType.Company
         }
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(e : any, showCompany : boolean) : void {
+    handleClick(e : any, listType : ListType) : void {
         e.preventDefault();
-        this.setState({ showCompany });
+        this.setState({ listType });
     }
 
     render() {
         return (
             <div className="app-container">
-                <ListContainer showCompany={this.state.showCompany} />
+                <ListContainer listType={this.state.listType} />
                 <NavButtons handleClick={this.handleClick}/>
             </div>
         );
     }
 }
+
+export default AppContainer;

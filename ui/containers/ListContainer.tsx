@@ -3,8 +3,9 @@ import ListHOC from "./ListHOC";
 import { CompanyList } from "../components/company/CompanyList";
 import { ContactList } from "../components/contact/ContactList";
 import { nameMapping } from "../helpers/contactHelpers";
+import { ListType } from "./enums/listTypes";
 
-interface ListContainerProps { showCompany : boolean }
+interface ListContainerProps { listType : ListType }
 
 export const ListContainer = (props : ListContainerProps) => {
     const CompanyListContainer : React.ComponentClass = ListHOC("Companies", CompanyList, "api/companies", (el : any) => el);
@@ -12,7 +13,7 @@ export const ListContainer = (props : ListContainerProps) => {
     return (
         <div>
             {
-                props.showCompany
+                props.listType === ListType.Company
                 ? <CompanyListContainer />
                 : <ContactListContainer />
             }

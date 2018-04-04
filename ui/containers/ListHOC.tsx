@@ -44,7 +44,7 @@ export default function ListHOC(header : string, Component : any, apiCall : stri
                      <Header name={header} />
                      <Search handleSearch={this.handleSearch} handleExit={this.handleExit} searchTerm={this.state.searchTerm} />
                      <div className="contactslist">
-                         <Infinite containerHeight={674} elementHeight={50}>
+                         <Infinite containerHeight={825} elementHeight={50}>
                              <Component items={this.state.items} searchTerm={this.state.searchTerm} />
                          </Infinite>
                      </div>
