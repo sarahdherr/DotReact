@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npm run test-jest && npm run test-mocha",
     "test-jest": "./node_modules/.bin/jest",
-    "test-mocha": "mocha -r ts-node/register **/mocha-tests/**/*.spec.tsx",
+    "test-mocha": "mocha --file test-setup.js -r ts-node/register **/mocha-tests/**/*.spec.tsx",
     "build": "webpack",
     "build-watch": "webpack -w",
     "start": "node server/index.js"

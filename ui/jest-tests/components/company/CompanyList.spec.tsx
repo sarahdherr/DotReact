@@ -9,9 +9,9 @@ import { mockCompanies, mockedCompanyComponents } from "../../mocks/company";
 it("includes companies that have the search term in their name", () => {
     // Assemble
     var items : Array<Company> = mockCompanies();
+    var searchTerm : string = "dot";
 
     // Act
-    var searchTerm : string = "dot";
     var list = shallow(<CompanyList items={items} searchTerm={searchTerm} />);
 
     // Assert
@@ -24,9 +24,9 @@ it("includes companies that have the search term in their name", () => {
 it("doesnt includes companies that dont have the search term in their name", () => {
     // Assemble
     var items : Array<Company> = mockCompanies();
+    var searchTerm : string = "dot";
 
     // Act
-    var searchTerm : string = "dot";
     var list = shallow(<CompanyList items={items} searchTerm={searchTerm} />);
 
     // Assert
