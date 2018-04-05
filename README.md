@@ -16,3 +16,5 @@ Versions I ran it on:
 To run full test suite:
 1. Make sure you have `npm install`ed
 2. `npm test`
+To just run the jest tests run command: `npm run test-jest`
+To just run the mocha tests run command: `npm run test-mocha`
